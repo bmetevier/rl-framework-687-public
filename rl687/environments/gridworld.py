@@ -1,5 +1,4 @@
 import numpy as np
-from IPython import embed
 from .skeleton import Environment
 
 class Gridworld(Environment):
