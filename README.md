@@ -20,14 +20,14 @@ pip install IPython
 This example will run ```homework1.py``` located in the homeworks directory (we will update this example after the first submission). In the rl-framework-687-public directory, run:
 
 ```
-python -m rl687.homeworks.homework1
+python -m homeworks.homework1
 
 ```
 
 ## Authors
 
 * **Blossom Metevier** - *Teaching Assistant* - [website](https://bmetevier.github.io/)
-  **Scott Jordan** - *Teaching Assistant* - [website](https://people.cs.umass.edu/~sjordan/)
+* **Scott Jordan** - *Teaching Assistant* - [website](https://people.cs.umass.edu/~sjordan/)
 
 ## License
 
