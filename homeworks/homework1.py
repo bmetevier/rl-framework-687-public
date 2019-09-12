@@ -7,6 +7,7 @@ def problemA():
     Report the mean, standard deviation, maximum, and minimum of the observed 
     discounted returns.
     """
+    pass  # TODO
 
 def problemB():
     """
@@ -14,6 +15,7 @@ def problemB():
     mean, standard deviation, maximum, and minimum of the observed 
     discounted returns
     """
+    pass  # TODO
     
 def main():
     print("Hello world")
