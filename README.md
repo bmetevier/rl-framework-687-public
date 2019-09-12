@@ -3,7 +3,7 @@ rl-framework-687-public is a reinforcement learning library for the Reinforcemen
 
 ## Installation
 
-This repo does not require any deep learning libraries such as TensorFlow or PyTorch. We only We only require numpy and Python 3. 
+This repo does not require any deep learning libraries such as TensorFlow or PyTorch. We only require numpy and Python 3. 
 
 ```
 pip install numpy
