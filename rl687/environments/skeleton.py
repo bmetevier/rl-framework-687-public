@@ -77,6 +77,18 @@ class Environment(ABC):
         The environment is reset.
         """
         pass
+    
+    @abstractmethod
+    def R(self, *args):
+        """
+        The reward function. Defines the signal sent to the 
+        learning agent as it interacts in the environment.
+        
+        output:
+            reward -- the reward resulting from taking the
+                        last action in the environment.
+        """
+        pass
 
 
 
