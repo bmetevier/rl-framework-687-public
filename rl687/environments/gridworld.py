@@ -122,9 +122,9 @@ class Gridworld(Environment):
             rdict -- a dictionary mapping integer states to reward values
         """
         rdict = {i:0 for i in range(0, self._size)}
-        rdict[self._endState] = 10 #reward for entering terminal state
-        for w in self._waterStates: rdict[w] = -10 #reward for being in water state
-        for o in self._obstacles: rdict[o] = None #no 
+        rdict[self._endState] = 10 
+        for w in self._waterStates: rdict[w] = -10 
+        for o in self._obstacles: rdict[o] = None 
         
         return rdict
     
