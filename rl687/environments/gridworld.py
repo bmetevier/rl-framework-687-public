@@ -75,36 +75,41 @@ class Gridworld(Environment):
     def gamma(self) -> float:
         return self._gamma
     
-    def step(self, action: int) -> Tuple[int, float, bool]:
+    def nextState(self, state: int, action: int) -> int:
         
-        if self._state == self._endState:
-            return self.state, 0, self.isEnd
+        if state == self._endState:
+            return state
         
-        #incorporate stochasticity
         noise = np.random.uniform()
         if noise < self._prStay: #do nothing
-            return self.state, self.reward, self.isEnd
-        elif noise < (self._prStay + self._prRotate): #rotate 
+            return state
+        elif noise < (self._prStay + self._prRotate): 
             action = self._rotateLeft[action]    
-        elif noise < (self._prStay + 2*self._prRotate):
+        elif noise < (self._prStay + 2*self._prRotate): 
             action = self._rotateRight[action]
-        
-        #take a step in the environment
-        state = self._state
-        if action==0: #move up
-            state -= self._shape[1]
-        elif action==1: #move down
-            state += self._shape[1]
-        elif action==2 and (state%self._shape[1] != 0): #move left
-            state -= 1
-        elif action==3 and ((state+1)%self._shape[1] != 0): #move right
-            state += 1
 
-        if state >= 0 and state<self._size and state not in self._obstacles: 
-            self._state = state
+        #simulate taking a step in the environment
+        nextState = self._state
+        if action==0: #move up
+            nextState = state - self._shape[1]
+        elif action==1: #move down
+            nextState = state + self._shape[1]
+        elif action==2 and (nextState % self._shape[1] != 0): #move left
+            nextState = state - 1
+        elif action==3 and ((nextState+1) % self._shape[1] != 0): #move right
+            nextState = state + 1
+            
+        if nextState >= 0 and nextState<self._size and nextState not in self._obstacles: 
+            return nextState
+        else: 
+            return state
         
-        self._reward = self.R(int(self._state)) #update reward
-        self._isEnd = self._state == self._endState #are we done yet
+    def step(self, action: int) -> Tuple[int, float, bool]:
+        
+        nextState = self.nextState(self._state, action)
+        self._reward = self.R(int(self._state), action, nextState)
+        self._state = nextState
+        self._isEnd = self._state == self._endState 
         
         return self.state, self.reward, self.isEnd
 
@@ -128,5 +133,5 @@ class Gridworld(Environment):
         
         return rdict
     
-    def R(self, nextState: int) -> float:
-        return self._R[nextState]
+    def R(self, state: int, action: int, nextState: int) -> float:
+        return 0 if (state==nextState and nextState==self._endState) else self._R[nextState]
