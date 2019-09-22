@@ -82,7 +82,6 @@ def plot_quantiles(data, labels):
     ax.set_xlabel(r"Probability $\tau$")
     ax.set_ylabel("Return")
     ax.set_title("More-Watery Gridworld-687")
-    fig.show()
     pp = PdfPages('return_distributions_hw1.pdf')
     pp.savefig()
     pp.close()
