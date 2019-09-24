@@ -1,4 +1,5 @@
 
+
 def problem1():
     """
     Apply the CEM algorithm to the More-Watery 687-Gridworld. Use a tabular 
@@ -71,6 +72,8 @@ def problem6():
     pass
 
 def main():
+    
+    print("hello, world")
     
     #TODO
     pass

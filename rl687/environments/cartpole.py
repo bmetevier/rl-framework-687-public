@@ -1,5 +1,5 @@
 import numpy as np
-from IPython import embed
+from typing import Union
 from .skeleton import Environment
 
 
@@ -18,9 +18,9 @@ class Cartpole(Environment):
     """
 
     def __init__(self):
-        self._name = "Cartpole"
 
         #TODO: properly define the variables below
+        self._name = "???"
         self._action = 0
         self._reward = 0
         self._isEnd = 0
@@ -51,7 +51,7 @@ class Cartpole(Environment):
         pass
 
     @property
-    def gamma(self) -> float:
+    def gamma(self)->float:
         #TODO
         pass
 
@@ -70,7 +70,7 @@ class Cartpole(Environment):
         #TODO
         pass
 
-    def nextState(self, state:np.ndarray, action:int):
+    def nextState(self, state:np.ndarray, action:int)->np.ndarray:
         """
         Compute the next state of the pendulum using the euler approximation to the dynamics
         """
@@ -81,7 +81,7 @@ class Cartpole(Environment):
        #TODO
         pass
 
-    def step(self, action):
+    def step(self, action:int)->Union[np.ndarray, float, bool]:
         #TODO
         pass
 
@@ -91,7 +91,7 @@ class Cartpole(Environment):
 
     def terminal(self)->bool:
         """
-        terminates the episode if:
+        The episode is at an end if:
             time is greater that 20 seconds
             pole falls |theta| > (pi/12.0)
             cart hits the sides |x| >= 3
