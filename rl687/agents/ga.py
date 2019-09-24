@@ -1,6 +1,9 @@
 import numpy as np
 from .bbo_agent import BBOAgent
 
+from typing import Callable
+
+
 class GA(BBOAgent):
     """
     A canonical Genetic Algorithm (GA) for policy search is a black box 
@@ -17,7 +20,7 @@ class GA(BBOAgent):
                     to be copied (unmodified) to the next generation
     """
 
-    def __init__(self, populationSize, evaluationFunction, numElite=1, numEpisodes=10):
+    def __init__(self, populationSize:int, evaluationFunction:Callable, numElite:int=1, numEpisodes:int=10):
         #TODO
         pass
 

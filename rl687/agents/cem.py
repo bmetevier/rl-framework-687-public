@@ -1,6 +1,8 @@
 import numpy as np
 from .bbo_agent import BBOAgent
 
+from typing import Callable
+
 
 class CEM(BBOAgent):
     """
@@ -28,7 +30,7 @@ class CEM(BBOAgent):
     epsilon (float): small numerical stability parameter
     """
 
-    def __init__(self, theta, sigma, popSize, numElite, numEpisodes, evaluationFunction, epsilon=0.0001):
+    def __init__(self, theta:np.ndarray, sigma:float, popSize:int, numElite:int, numEpisodes:int, evaluationFunction:Callable, epsilon:float=0.0001):
         #TODO
         pass
         

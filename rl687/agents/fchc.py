@@ -1,6 +1,9 @@
 import numpy as np
 from .bbo_agent import BBOAgent
 
+from typing import Callable
+
+
 class FCHC(BBOAgent):
     """
     First-choice hill-climbing (FCHC) for policy search is a black box optimization (BBO)
@@ -17,7 +20,7 @@ class FCHC(BBOAgent):
         output: the estimated return of the policy 
     """
 
-    def __init__(self, theta, sigma, evaluationFunction, numEpisodes=10):
+    def __init__(self, theta:np.ndarray, sigma:float, evaluationFunction:Callable, numEpisodes:int=10):
         #TODO
         pass
 
