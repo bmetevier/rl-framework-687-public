@@ -26,7 +26,7 @@ class Gridworld(Environment):
             0 everywhere else
     """
 
-    def __init__(self, startState=0, endState=24, shape=(5,5), obstacles=[12, 17], waterStates=[6, 18, 22]):
+    def __init__(self, startState=0, endState=24, shape=(5,5), obstacles=(12, 17), waterStates=(6, 18, 22)):
         self._name = "Gridworld"
         self._gamma = 0.9
         self._startState = startState

@@ -34,19 +34,19 @@ class CEM(BBOAgent):
         
 
     @property
-    def name(self):
+    def name(self)->str:
         #TODO
         pass
     
     @property
-    def parameters(self):
+    def parameters(self)->np.ndarray:
         #TODO
         pass
 
-    def train(self):
+    def train(self)->np.ndarray:
         #TODO
         pass
 
-    def reset(self):
+    def reset(self)->None:
         #TODO
         pass

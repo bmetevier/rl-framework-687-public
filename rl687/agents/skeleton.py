@@ -24,10 +24,3 @@ class Agent(ABC):
         ended and it should prepare for the next one. 
         """
         pass
-
-    @abstractmethod
-    def train(self):
-        """
-        See bbo_agent.py for description.
-        """
-        pass

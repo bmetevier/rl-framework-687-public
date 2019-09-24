@@ -23,15 +23,15 @@ class TabularSoftmax(Policy):
         pass
 
     @property
-    def parameters(self):
+    def parameters(self)->np.ndarray:
         """
         Return the policy parameters as a numpy vector (1D array).
         This should be a vector of length |S|x|A|
         """
-        return self.theta.flatten()
+        return self._theta.flatten()
     
     @parameters.setter
-    def parameters(self, p):
+    def parameters(self, p:np.ndarray):
         """
         Update the policy parameters. Input is a 1D numpy array of size |S|x|A|.
         """
@@ -50,8 +50,8 @@ class TabularSoftmax(Policy):
             action -- the sampled action
         """
         
-         #TODO
-         pass
+        #TODO
+        pass
 
     def getActionProbabilities(self, state:int)->np.ndarray:
         """

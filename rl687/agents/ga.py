@@ -22,16 +22,16 @@ class GA(BBOAgent):
         pass
 
     @property
-    def name(self):
+    def name(self)->str:
         #TODO
         pass
     
     @property
-    def parameters(self):
+    def parameters(self)->np.ndarray:
         #TODO
         pass
 
-    def _mutate(self, parent:np.ndarray):
+    def _mutate(self, parent:np.ndarray)->np.ndarray:
         """
         Perform a mutation operation to create a child for the next generation.
         The parent must remain unmodified. 
@@ -43,10 +43,10 @@ class GA(BBOAgent):
         #TODO
         pass
 
-    def train(self):
+    def train(self)->np.ndarray:
         #TODO
         pass
 
-    def reset(self):
+    def reset(self)->None:
         #TODO
         pass
