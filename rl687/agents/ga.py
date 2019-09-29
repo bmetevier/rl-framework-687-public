@@ -18,13 +18,16 @@ class GA(BBOAgent):
     """
 
     def __init__(self, populationSize, evaluationFunction, numElite=1, numEpisodes=10):
+        
+        self._name = "Genetic_Algorithm"
+        self._population = None #TODO: set this value to the most recently created generation
+        
         #TODO
         pass
 
     @property
     def name(self)->str:
-        #TODO
-        pass
+        return self._name
     
     @property
     def parameters(self)->np.ndarray:

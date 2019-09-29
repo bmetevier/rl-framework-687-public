@@ -20,7 +20,7 @@ class Cartpole(Environment):
     def __init__(self):
 
         #TODO: properly define the variables below
-        self._name = "???"
+        self._name = "Cartpole"
         self._action = 0
         self._reward = 0
         self._isEnd = 0
@@ -42,8 +42,7 @@ class Cartpole(Environment):
 
     @property
     def name(self)->str:
-        #TODO
-        pass
+        return self._name
 
     @property
     def reward(self)->float:

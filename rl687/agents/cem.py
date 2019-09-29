@@ -29,14 +29,18 @@ class CEM(BBOAgent):
     """
 
     def __init__(self, theta, sigma, popSize, numElite, numEpisodes, evaluationFunction, epsilon=0.0001):
+        self._name = "Cross_Entropy_Method"
+        
+        self._theta = None #TODO: set this value to the current mean parameter vector
+        self._Sigma = None #TODO: set this value to the current covariance matrix
+        
         #TODO
         pass
         
 
     @property
     def name(self)->str:
-        #TODO
-        pass
+        return self._name
     
     @property
     def parameters(self)->np.ndarray:

@@ -18,13 +18,14 @@ class FCHC(BBOAgent):
     """
 
     def __init__(self, theta, sigma, evaluationFunction, numEpisodes=10):
+        self._name = "First_Choice_Hill_Climbing"
+        
         #TODO
         pass
 
     @property
     def name(self)->str:
-        #TODO
-        pass
+        return self._name
     
     @property
     def parameters(self)->np.ndarray:
