@@ -1,6 +1,9 @@
 import numpy as np
 from .bbo_agent import BBOAgent
 
+from typing import Callable
+
+
 class GA(BBOAgent):
     """
     A canonical Genetic Algorithm (GA) for policy search is a black box 
@@ -13,15 +16,22 @@ class GA(BBOAgent):
     evaluationFunction (function): evaluates a parameterized policy
         input: a parameterized policy theta, numEpisodes
         output: the estimated return of the policy            
+    initPopulationFunction (function): creates the first generation of
+                    individuals to be used for the GA
+        input: populationSize (int)
+        output: a numpy matrix of size (N x M) where N is the number of 
+                individuals in the population and M is the number of 
+                parameters (size of the parameter vector)
     numElite (int): the number of top individuals from the current generation
                     to be copied (unmodified) to the next generation
+    
     """
 
-    def __init__(self, populationSize, evaluationFunction, numElite=1, numEpisodes=10):
-        
+    def __init__(self, populationSize:int, evaluationFunction:Callable, 
+                 initPopulationFunction:Callable, numElite:int=1, numEpisodes:int=10):
         self._name = "Genetic_Algorithm"
         self._population = None #TODO: set this value to the most recently created generation
-        
+    
         #TODO
         pass
 
