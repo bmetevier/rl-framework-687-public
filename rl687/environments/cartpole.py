@@ -18,8 +18,9 @@ class Cartpole(Environment):
     """
 
     def __init__(self):
+        self._name = "Cartpole"
+        
         # TODO: properly define the variables below
-        self._name = "???"
         self._action = 0
         self._reward = 0
         self._isEnd = 0
@@ -37,12 +38,11 @@ class Cartpole(Environment):
         self._mc = 0.0  # cart mass
         self._l = 0.0  # (1/2) * pole length
         self._dt = 0.0  # timestep
-        self._t = 0.0  # total time elapsed  NOTE: USE must use this variable
+        self._t = 0.0  # total time elapsed  NOTE: you must use this variable
 
     @property
-    def name(self) -> str:
-        # TODO
-        pass
+    def name(self)->str:
+        return self._name
 
     @property
     def reward(self) -> float:

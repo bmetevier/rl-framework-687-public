@@ -19,15 +19,15 @@ class FCHC(BBOAgent):
         input: policy (np.ndarray: a parameterized policy), numEpisodes
         output: the estimated return of the policy 
     """
-
+    
     def __init__(self, theta:np.ndarray, sigma:float, evaluationFunction:Callable, numEpisodes:int=10):
+        self._name = "First_Choice_Hill_Climbing"
         #TODO
         pass
 
     @property
     def name(self)->str:
-        #TODO
-        pass
+        return self._name
     
     @property
     def parameters(self)->np.ndarray:
